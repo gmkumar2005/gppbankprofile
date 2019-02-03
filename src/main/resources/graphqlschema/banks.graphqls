@@ -1,0 +1,11 @@
+type Bank {
+    office: ID!
+    officeName: String
+    countryCode: String
+    accountNo: String
+}
+
+type Query {
+  findAllBanks: [Bank]!
+  countBanks: Long!
+}

@@ -1,5 +1,9 @@
-package com.fnstr.gpp.gppprofiles;
+package com.fnstr.bankprofile.gppbankprofile;
 
+import com.fnstr.bankprofile.gppbankprofile.repository.BanksRepository;
+import com.fnstr.bankprofile.gppbankprofile.resolver.BankQueryResolver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,12 +13,17 @@ import org.springframework.context.annotation.Bean;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class GppprofilesApplication {
-
+public class GppbankprofileApplication {
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	public static void main(String[] args) {
-		SpringApplication.run(GppprofilesApplication.class, args);
-
+		SpringApplication.run(GppbankprofileApplication.class, args);
 	}
+
+	@Bean
+	public BankQueryResolver query(BanksRepository banksRepository) {
+		return new BankQueryResolver(banksRepository);
+	}
+
 
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
@@ -25,10 +34,11 @@ public class GppprofilesApplication {
 			String[] beanNames = ctx.getBeanDefinitionNames();
 			Arrays.sort(beanNames);
 			for (String beanName : beanNames) {
-				System.out.println(beanName);
+				logger.info(" Found : " + beanName );
 			}
 
 		};
 	}
+
 }
 

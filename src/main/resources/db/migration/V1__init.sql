@@ -1,0 +1,102 @@
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+
+-- Create table
+create table BANKS
+(
+  office                         CHAR(3),
+  update_date                    DATE,
+  time                           CHAR(8),
+  operator                       VARCHAR2(50),
+  offc_name                      VARCHAR2(30),
+  offc_addr1                     VARCHAR2(50),
+  offc_addr2                     VARCHAR2(50),
+  bsnessdate                     DATE,
+  rel_order                      VARCHAR2(16),
+  fprint                         VARCHAR2(32),
+  time_stamp                     CHAR(23),
+  currency                       CHAR(3) default ('cm'),
+  countrycode                    CHAR(2) default ('cm'),
+  calname                        VARCHAR2(8) default ('cm'),
+  accountno                      VARCHAR2(34),
+  min_acc_length                 CHAR(2),
+  max_acc_length                 CHAR(2),
+  hedge_currency                 CHAR(3),
+  cust_code                      VARCHAR2(40),
+  rec_status                     CHAR(2) default ('AC'),
+  legal_entity                   CHAR(3),
+  min_fee_trans_amount           NUMBER(9,4),
+  fee_currency                   CHAR(3) default 'USD',
+  profile_change_status          CHAR(2),
+  pending_action                 CHAR(2),
+  processing_status              VARCHAR2(10) default 'NONE',
+  effective_date                 DATE,
+  referencebranch                VARCHAR2(25),
+  force_lead_zero                NUMBER(1) default (0),
+  trunc_lead_zero                NUMBER(1) default (0),
+  other_base_ccy                 CHAR(3),
+  next_bsnessdate                DATE,
+  prev_bsnessdate                DATE,
+  uid_banks                      VARCHAR2(100),
+  cutoff_name                    VARCHAR2(25),
+  history_proc_dt                DATE,
+  lang                           VARCHAR2(25),
+  def_bookng_ent                 VARCHAR2(10),
+  def_cnsld_fee_post             VARCHAR2(30),
+  def_cnsld_pnl_post             VARCHAR2(30),
+  post_zero_fee                  NUMBER(1),
+  btch_ctrl_id                   VARCHAR2(35),
+  def_cnsld_tax_post             VARCHAR2(30),
+  def_cnsld_tax_pnl_post         VARCHAR2(30),
+  iso_code_logical_field         VARCHAR2(50),
+  in_scope_ind                   NUMBER(1) default 1 not null,
+  file_duplicate_check_ind       NUMBER(1),
+  min_num_of_authoriz_subscriber NUMBER(2),
+  limit_ccy                      VARCHAR2(3),
+  rff_duplicate_check_ind        NUMBER(1),
+  estm_duplicate_check_ind       NUMBER(1),
+  order_type                     VARCHAR2(256),
+  format_name                    VARCHAR2(256),
+  statement_duplicate_check_ind  NUMBER(1),
+  statement_format_name          VARCHAR2(256),
+  clrng_sttlmt_on_sndng_dt       NUMBER(1) default 0 not null,
+  gpi_member                     NUMBER(1) default 0 not null
+);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('***', null, '        ', null, 'Global Office', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), 'LATEST', null, '2018-12-19 15:08:51.376', 'ILS', 'IL', 'DH_CAL', null, null, null, null, 'XXXGLOBALOFFICE', 'AC', null, null, null, 'NO', 'UP', null, to_date('09-10-2018', 'dd-mm-yyyy'), null, 1, 1, null, to_date('10-10-2018', 'dd-mm-yyyy'), to_date('09-10-2018', 'dd-mm-yyyy'), '***', null, to_date('24-09-2018', 'dd-mm-yyyy'), 'ENGLISH', 'Bankfusion', null, null, 0, null, null, null, null, 1, 1, null, 'ILS', null, null, null, null, null, null, 0, 1);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('NZ1', null, null, null, 'DH bank NZ Ltd1', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), null, null, '2018-12-19 15:08:53.455', 'NZD', 'NZ', 'NZ_CAL', null, null, null, null, 'LOCALOFFICENZ', 'AC', null, null, null, 'NO', 'UP', null, to_date('23-05-2018', 'dd-mm-yyyy'), null, 0, 0, null, to_date('25-05-2018', 'dd-mm-yyyy'), to_date('23-05-2018', 'dd-mm-yyyy'), 'NZ1', null, to_date('03-05-2018', 'dd-mm-yyyy'), 'ENGLISH', 'Bankfusion', null, null, 0, null, null, null, null, 1, 0, null, 'NZD', null, null, null, null, null, null, 0, 0);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('SG1', null, null, null, 'DH Bank Singapore', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), null, null, '2018-12-19 15:08:52.980', 'SGD', 'SG', 'SG1_CAL', null, null, null, null, 'LOCALOFFICESG', 'AC', null, null, null, 'NO', 'UP', null, to_date('23-05-2018', 'dd-mm-yyyy'), null, 0, 0, null, to_date('25-05-2018', 'dd-mm-yyyy'), to_date('23-05-2018', 'dd-mm-yyyy'), 'SG1', null, to_date('09-05-2018', 'dd-mm-yyyy'), 'ENGLISH', 'Bankfusion', null, null, 0, null, null, null, null, 1, 1, null, 'SGD', null, null, null, null, null, null, 0, 0);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('AU1', null, null, null, 'DH Australia', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), null, null, '2018-12-19 15:08:52.482', 'AUD', 'AU', 'AUD', null, null, null, null, 'LOCALOFFICECA1', 'AC', null, null, null, 'NO', 'UP', null, to_date('23-05-2018', 'dd-mm-yyyy'), null, 0, 0, null, to_date('27-05-2018', 'dd-mm-yyyy'), to_date('23-05-2018', 'dd-mm-yyyy'), 'AU1', null, to_date('03-05-2018', 'dd-mm-yyyy'), 'ENGLISH', 'Bankfusion', null, null, 0, null, null, null, null, 1, 1, null, 'AUD', null, null, null, null, null, null, 0, 0);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('ZA1', null, null, null, 'ZA1', null, null, to_date('10-08-2017', 'dd-mm-yyyy'), null, null, '2018-12-25 14:07:45.067', 'ZAR', 'ZA', 'ZAR_CAL', null, null, null, null, 'LOCALOFFICEZA1', 'AC', null, null, null, 'NO', 'UP', null, to_date('10-08-2017', 'dd-mm-yyyy'), null, 0, 0, null, to_date('11-08-2017', 'dd-mm-yyyy'), to_date('10-08-2017', 'dd-mm-yyyy'), 'ZA1', null, to_date('24-07-2017', 'dd-mm-yyyy'), 'ENGLISH', null, null, null, 0, null, null, null, null, 1, 1, null, 'ZAR', null, null, null, null, null, null, 0, 0);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('DH1', null, null, null, 'DH1', null, null, to_date('08-11-2016', 'dd-mm-yyyy'), null, null, '2018-12-25 14:07:37.343', 'ILS', 'IL', 'DH_CAL', null, '10', '19', null, 'LOCALOFFICEDH1', 'AC', null, null, null, 'NO', 'UP', null, to_date('08-11-2016', 'dd-mm-yyyy'), null, 0, 1, null, to_date('09-11-2016', 'dd-mm-yyyy'), to_date('08-11-2016', 'dd-mm-yyyy'), 'DH1', null, to_date('24-10-2016', 'dd-mm-yyyy'), 'ENGLISH', 'Bankfusion', null, null, 0, null, null, null, null, 1, 1, null, 'ILS', null, null, null, null, null, null, 0, 1);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('US1', null, null, null, 'DH United States', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), null, null, '2018-12-06 09:06:03.918', 'USD', 'US', 'USD', null, null, null, null, 'LOCALOFFICEUS1', 'AC', null, null, null, 'NO', 'UP', null, to_date('05-12-2018', 'dd-mm-yyyy'), null, 0, 0, null, to_date('07-12-2018', 'dd-mm-yyyy'), to_date('05-12-2018', 'dd-mm-yyyy'), 'US1', null, to_date('15-11-2018', 'dd-mm-yyyy'), 'ENGLISH', null, null, null, 0, null, null, null, null, 1, 1, null, 'USD', null, null, null, null, null, null, 0, 0);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('DHM', null, null, null, 'Malaysia Payment Processing', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), null, null, '2018-12-19 15:08:54.440', 'MYR', 'MY', 'MYR', null, null, null, null, 'DHMSADHMBMYKLXXX', 'AC', null, null, null, 'FU', 'UP', null, to_date('23-05-2018', 'dd-mm-yyyy'), null, 0, 0, null, to_date('25-05-2018', 'dd-mm-yyyy'), to_date('23-05-2018', 'dd-mm-yyyy'), 'DHM', null, to_date('03-05-2018', 'dd-mm-yyyy'), 'ENGLISH', 'Bankfusion', null, null, 0, null, null, null, null, 1, 1, null, 'MYR', null, null, null, null, null, null, 0, 0);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('BSD', null, null, null, 'TEST_QA_12345', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), null, null, '2018-12-19 15:08:54.935', 'AUD', 'AF', 'GGP', null, null, null, null, null, 'AC', null, null, null, 'NO', 'CR', null, to_date('23-05-2018', 'dd-mm-yyyy'), null, 0, 0, null, to_date('25-05-2018', 'dd-mm-yyyy'), to_date('23-05-2018', 'dd-mm-yyyy'), 'BSD', null, to_date('03-05-2018', 'dd-mm-yyyy'), 'ENGLISH', null, null, null, 0, null, null, null, null, 1, 1, null, 'AUD', null, null, null, null, null, null, 0, 0);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('USD', null, null, null, 'DH United State', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), null, null, '2018-12-19 15:08:55.416', 'USD', 'US', 'USD', null, null, null, null, null, 'AC', null, null, null, 'NO', 'CR', null, to_date('23-05-2018', 'dd-mm-yyyy'), null, 0, 0, null, to_date('25-05-2018', 'dd-mm-yyyy'), to_date('23-05-2018', 'dd-mm-yyyy'), 'USD', null, to_date('03-05-2018', 'dd-mm-yyyy'), 'ENGLISH', null, null, null, 0, null, null, null, null, 1, 1, null, 'USD', null, null, null, null, null, null, 0, 0);
+
+insert into BANKS (OFFICE, UPDATE_DATE, TIME, OPERATOR, OFFC_NAME, OFFC_ADDR1, OFFC_ADDR2, BSNESSDATE, REL_ORDER, FPRINT, TIME_STAMP, CURRENCY, COUNTRYCODE, CALNAME, ACCOUNTNO, MIN_ACC_LENGTH, MAX_ACC_LENGTH, HEDGE_CURRENCY, CUST_CODE, REC_STATUS, LEGAL_ENTITY, MIN_FEE_TRANS_AMOUNT, FEE_CURRENCY, PROFILE_CHANGE_STATUS, PENDING_ACTION, PROCESSING_STATUS, EFFECTIVE_DATE, REFERENCEBRANCH, FORCE_LEAD_ZERO, TRUNC_LEAD_ZERO, OTHER_BASE_CCY, NEXT_BSNESSDATE, PREV_BSNESSDATE, UID_BANKS, CUTOFF_NAME, HISTORY_PROC_DT, LANG, DEF_BOOKNG_ENT, DEF_CNSLD_FEE_POST, DEF_CNSLD_PNL_POST, POST_ZERO_FEE, BTCH_CTRL_ID, DEF_CNSLD_TAX_POST, DEF_CNSLD_TAX_PNL_POST, ISO_CODE_LOGICAL_FIELD, IN_SCOPE_IND, FILE_DUPLICATE_CHECK_IND, MIN_NUM_OF_AUTHORIZ_SUBSCRIBER, LIMIT_CCY, RFF_DUPLICATE_CHECK_IND, ESTM_DUPLICATE_CHECK_IND, ORDER_TYPE, FORMAT_NAME, STATEMENT_DUPLICATE_CHECK_IND, STATEMENT_FORMAT_NAME, CLRNG_STTLMT_ON_SNDNG_DT, GPI_MEMBER)
+values ('RTU', null, null, null, 'fjg', null, null, to_date('06-12-2018', 'dd-mm-yyyy'), null, null, '2018-12-19 15:08:55.890', 'AUD', 'AF', 'IMP', null, null, null, null, null, 'AC', null, null, null, 'NO', 'CR', null, to_date('23-05-2018', 'dd-mm-yyyy'), null, 0, 0, null, to_date('25-05-2018', 'dd-mm-yyyy'), to_date('23-05-2018', 'dd-mm-yyyy'), 'RTU', null, to_date('03-05-2018', 'dd-mm-yyyy'), 'ENGLISH', null, null, null, 0, null, null, null, null, 1, 1, null, 'AUD', null, null, null, null, null, null, 0, 0);
