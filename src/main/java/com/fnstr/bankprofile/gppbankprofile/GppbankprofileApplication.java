@@ -1,7 +1,6 @@
 package com.fnstr.bankprofile.gppbankprofile;
 
-import com.fnstr.bankprofile.gppbankprofile.repository.BanksRepository;
-import com.fnstr.bankprofile.gppbankprofile.resolver.BankQueryResolver;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -13,32 +12,29 @@ import org.springframework.context.annotation.Bean;
 import java.util.Arrays;
 
 @SpringBootApplication
+@Slf4j
 public class GppbankprofileApplication {
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	public static void main(String[] args) {
-		SpringApplication.run(GppbankprofileApplication.class, args);
-	}
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Bean
-	public BankQueryResolver query(BanksRepository banksRepository) {
-		return new BankQueryResolver(banksRepository);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(GppbankprofileApplication.class, args);
+    }
 
 
-	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-		return args -> {
+    @Bean
+    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+        return args -> {
 
-			System.out.println("Let's inspect the beans provided by Spring Boot:");
+            log.info("Let's inspect the beans provided by Spring Boot:");
 
-			String[] beanNames = ctx.getBeanDefinitionNames();
-			Arrays.sort(beanNames);
-			for (String beanName : beanNames) {
-				logger.info(" Found : " + beanName );
-			}
+            String[] beanNames = ctx.getBeanDefinitionNames();
+            Arrays.sort(beanNames);
+//			for (String beanName : beanNames) {
+//				logger.info(" Found : " + beanName );
+//			}
 
-		};
-	}
+        };
+    }
 
 }
 

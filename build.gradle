@@ -19,7 +19,6 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.fnstr.bankprofile'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-//kotlinVersion = '1.1.1'
 apply plugin: 'io.spring.dependency-management'
 
 dependencyManagement {
@@ -42,16 +41,20 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	// implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.flywaydb:flyway-core'
 	implementation 'org.springframework.retry:spring-retry'
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
 	compileOnly 'org.projectlombok:lombok'
+	testImplementation 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// testImplementation 'org.springframework.security:spring-security-test'
-	compile 'com.graphql-java-kickstart:graphql-spring-boot-starter:5.2'
-	compile 'com.graphql-java-kickstart:graphiql-spring-boot-starter:5.2'
-	compile 'com.graphql-java-kickstart:voyager-spring-boot-starter:5.2'
+	compile 'com.graphql-java-kickstart:graphql-java-tools:5.4.1'
+	compile 'com.graphql-java-kickstart:graphql-spring-boot-starter:5.4.1'
+	compile 'com.graphql-java-kickstart:graphiql-spring-boot-starter:5.4.1'
+	compile 'com.graphql-java-kickstart:voyager-spring-boot-starter:5.4.1'
+	compile "io.github.graphql-java:graphql-java-annotations:6.1"
+	testCompile 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:5.4.1'
 	// https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
 
 }
