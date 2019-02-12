@@ -56,7 +56,7 @@ public class GppbankprofileApplicationTests {
         assertNotNull(response.getRawResponse().toString());
         assertTrue(response.isOk());
         assertNotNull(response);
-        Integer bankscount =  Integer.valueOf(response.context().read("$.data.countBanks"));
+        Integer bankscount =  response.context().read("$.data.countBanks");
         assertThat(bankscount).isGreaterThan(1);
     }
 
