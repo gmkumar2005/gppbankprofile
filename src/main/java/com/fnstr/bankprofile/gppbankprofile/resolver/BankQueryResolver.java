@@ -3,6 +3,7 @@ package com.fnstr.bankprofile.gppbankprofile.resolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.fnstr.bankprofile.gppbankprofile.model.Bank;
 import com.fnstr.bankprofile.gppbankprofile.repository.BanksRepository;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,4 +22,14 @@ public class BankQueryResolver  implements GraphQLQueryResolver {
         return banksRepository.count();
     }
 
+    public Iterable<Bank> showBanks(int limit,int offset){
+        Page<Bank> banksfound = banksRepository.findAll( PageRequest.of(offset, limit, Sort.by("officeName")));
+        return banksfound;
+    }
+
+    public BankPageableResponse banks(final InputPage inputPage,  final BankExample bankExample) {
+        Example<Bank>  filter = BankExample.convert(bankExample);
+        Page<Bank> banksfound =  banksRepository.findAll(filter,PageRequest.of(inputPage.getPage(), inputPage.getSize() , Sort.by("officeName")));
+        return new BankPageableResponse(banksfound);
+    }
 }

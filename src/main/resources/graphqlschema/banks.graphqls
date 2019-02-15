@@ -5,7 +5,48 @@ type Bank {
     accountNo: String
 }
 
+
 type Query {
   findAllBanks: [Bank]!
   countBanks: Long!
+  showBanks(limit:Int,offset:Int) : [Bank]!
+  banks(page: InputPage,filter:BankExample={}) : BankPageableResponse
+}
+
+type PageInfo {
+    # Total number of elements
+    totalElements: Long!
+    # Total number of pages
+    totalPages: Long!
+    # Number of elements
+    numberOfElements: Long!
+    # Page number
+    pageNumber: Long!
+    # Size of the page
+    pageSize: Long!
+}
+
+
+type BankPageableResponse {
+    # Information of the page
+    pageInfo: PageInfo!
+    # The Banks
+    content: [Bank]
+}
+
+
+input InputPage {
+    # The requested page
+    page: Long!
+    # The requested size of the page
+    size: Long!
+}
+
+
+# Input type for a query by example
+input BankExample {
+       office: String
+       officeName: String
+       countryCode: String
+       accountNo: String
 }
