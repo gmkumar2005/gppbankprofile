@@ -29,7 +29,7 @@ public class BankQueryResolver  implements GraphQLQueryResolver {
 
     public BankPageableResponse banks(final InputPage inputPage,  final BankExample bankExample) {
         Example<Bank>  filter = BankExample.convert(bankExample);
-        Page<Bank> banksfound =  banksRepository.findAll(filter,PageRequest.of(inputPage.getPage(), inputPage.getSize() , Sort.by("officeName")));
+        Page<Bank> banksfound  = banksRepository.findAll(filter,PageRequest.of(0, 5));
         return new BankPageableResponse(banksfound);
     }
 }

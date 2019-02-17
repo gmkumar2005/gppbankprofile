@@ -25,8 +25,7 @@ public class BankExample {
     }
 
     public static Example<Bank> convert(BankExample bankExample) {
-        Bank bank = bankExample != null ? new Bank(bankExample.office, bankExample.officeName, bankExample.countryCode, bankExample.accountNo) : null;
-//        return Example.of(bank, ExampleMatcher.matchingAll().withIgnoreCase());
-        return Example.of(bank);
+        Bank bank1 = new Bank(bankExample.office, bankExample.officeName, bankExample.countryCode, bankExample.accountNo);
+        return Example.of(bank1,ExampleMatcher.matchingAll().withIgnoreCase().withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING));
     }
 }
