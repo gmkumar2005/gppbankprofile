@@ -20,12 +20,10 @@ public class BankExample {
 
     private String accountNo;
 
-    Example<Bank>  convert() {
-        return convert(this);
-    }
 
     public static Example<Bank> convert(BankExample bankExample) {
         Bank bank1 = new Bank(bankExample.office, bankExample.officeName, bankExample.countryCode, bankExample.accountNo);
-        return Example.of(bank1,ExampleMatcher.matchingAll().withIgnoreCase().withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING));
+        return Example.of(bank1, ExampleMatcher.matchingAll().withIgnoreCase().withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING));
     }
+
 }

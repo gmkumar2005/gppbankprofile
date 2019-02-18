@@ -27,10 +27,9 @@ public class BankQueryResolver  implements GraphQLQueryResolver {
         return banksRepository.findAll( PageRequest.of(offset, limit, Sort.by("officeName")));
     }
 
-    public BankPageableResponse banks(final InputPage inputPage,  final BankExample bankExample) {
+    public BankPageableResponse banks(final InputPage inputPage,  final BankExample bankExample, final String sort) {
         Example<Bank>  filter = BankExample.convert(bankExample);
-        Page<Bank> banksfound =  banksRepository.findAll(filter,PageRequest.of(inputPage.getPage(), inputPage.getSize() , Sort.by(Sort.Order.asc("officeName"))));
-
+        Page<Bank> banksfound =  banksRepository.findAll(filter,PageRequestBuilder.getPageRequest(inputPage.getPage(),inputPage.getSize(),sort));
         return new BankPageableResponse(banksfound);
     }
 }

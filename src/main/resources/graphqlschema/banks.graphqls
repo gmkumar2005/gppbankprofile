@@ -10,7 +10,7 @@ type Query {
   findAllBanks: [Bank]!
   countBanks: Long!
   showBanks(limit:Int,offset:Int) : [Bank]!
-  banks(page: InputPage,filter:BankExample={}) : BankPageableResponse
+  banks(page: InputPage,filter:BankExample={},sort: String) : BankPageableResponse
 }
 
 type PageInfo {
