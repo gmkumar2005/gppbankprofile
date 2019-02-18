@@ -3,6 +3,7 @@ TODO -- Get related entities
 Done -- Lombok impl
 Done  -- Filter by example
 Done  -- Like
+TODO -- Sorting
 TODO -- IN
 TODO -- or and
 TODO -- Identify N+1
