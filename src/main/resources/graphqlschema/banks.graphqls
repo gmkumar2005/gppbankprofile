@@ -1,12 +1,68 @@
+#Java Util Date
+scalar Date
+
 type Bank {
-    #Office ID
-    office: ID!
-    #Alias Office name. Name of local branch office
-    officeName: String
-    #Alias Bank info party code. Code of bank that operates this office. Name of bank automatically displayed.
-    countryCode: String
-    #Alias Special processing account.
-    accountNo: String
+        #Office ID
+        office: ID!
+        updateDate: Date
+        time: String
+        operator: String
+        #Alias Office name. Name of local branch office
+        officeName: String
+        offcAddr1: String
+        offcAddr2: String
+        bsnessdate: Date
+        relOrder: String
+        fprint: String
+        timeStamp: String
+        currency: String
+        #Alias Bank info party code. Code of bank that operates this office. Name of bank automatically displayed.
+        countryCode: String
+        calname: String
+        #Alias Special processing account.
+        accountNo: String
+        minAccLength: String
+        maxAccLength: String
+        hedgeCurrency: String
+        custCode: String
+        recStatus: String
+        legalEntity: String
+        minFeeTransAmount: Long
+        feeCurrency: String
+        profileChangeStatus: String
+        pendingAction: String
+        processingStatus: String
+        effectiveDate: Date
+        referencebranch: String
+        forceLeadZero: Long
+        truncLeadZero: Long
+        otherBaseCcy: String
+        nextBsnessdate: String
+        prevBsnessdate: Date
+        uidBanks: String
+        cutoffName: String
+        historyProcDt: Date
+        lang: String
+        defBookngEnt: String
+        defCnsldFeePost: String
+        defCnsldPnlPost: String
+        postZeroFee: Long
+        btchCtrlId: String
+        defCnsldTaxPost: String
+        defCnsldTaxPnlPost: String
+        isoCodeLogicalField: String
+        inScopeInd: Long
+        fileDuplicateCheckInd: Long
+        minNumOfAuthorizSubscribe: Long
+        limitCcy: String
+        rffDuplicateCheckInd: Long
+        estmDuplicateCheckInd: Long
+        orderType: String
+        formatName: String
+        statementDuplicateCheckInd: Long
+        statementFormatName: String
+        clrngSttlmtOnSndngDt: Long
+        gpiMember: Long
 }
 
 
