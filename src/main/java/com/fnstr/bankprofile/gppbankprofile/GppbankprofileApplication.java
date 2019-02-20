@@ -5,8 +5,6 @@ import graphql.ExceptionWhileDataFetching;
 import graphql.GraphQLError;
 import graphql.servlet.GraphQLErrorHandler;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +19,6 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 @Slf4j
 public class GppbankprofileApplication {
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public static void main(String[] args) {
         SpringApplication.run(GppbankprofileApplication.class, args);
@@ -37,7 +34,7 @@ public class GppbankprofileApplication {
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
 			for (String beanName : beanNames) {
-				logger.info(" Found : " + beanName );
+                log.info("Found : {} " , beanName );
 			}
 
         };

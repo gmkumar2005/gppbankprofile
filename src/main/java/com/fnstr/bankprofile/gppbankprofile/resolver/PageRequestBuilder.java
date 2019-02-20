@@ -34,9 +34,8 @@ public final class PageRequestBuilder {
         List<Order> sortingOrders = sortingFields.stream().map(PageRequestBuilder::getOrder)
                 .collect(Collectors.toList());
         Sort sort = sortingOrders.isEmpty() ? null : Sort.by(sortingOrders);
-        PageRequest pageRequest = sort == null ? PageRequest.of(ObjectUtils.defaultIfNull(pageNumber, 1) - 1, ObjectUtils.defaultIfNull(pageSize, 20))
+        return sort == null ? PageRequest.of(ObjectUtils.defaultIfNull(pageNumber, 1) - 1, ObjectUtils.defaultIfNull(pageSize, 20))
                 : PageRequest.of(ObjectUtils.defaultIfNull(pageNumber, 1) - 1, ObjectUtils.defaultIfNull(pageSize, 20), sort);
-        return pageRequest;
     }
 
     private static Order getOrder(String value) {
