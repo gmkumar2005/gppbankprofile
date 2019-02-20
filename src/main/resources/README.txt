@@ -8,11 +8,13 @@ TODO -- IN
 TODO -- or and
 TODO -- Identify N+1
 Done -- Paging
-TODO -- Profiling
+Done -- Profiling same as Instrumentation
 TODO -- Mutations
 TODO -- Approve,Reject
 TODO -- Union
 TODO -- Dataloader
-TODO -- Instrumentation
+Done  -- Instrumentation
 TODO -- Subscription
-TODO -- Error Handling
+Done -- Error Handling
+TODO -- All the fields in Bank
+

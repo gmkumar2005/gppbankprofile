@@ -1,16 +1,61 @@
 type Bank {
+    #Office ID
     office: ID!
+    #Alias Office name. Name of local branch office
     officeName: String
+    #Alias Bank info party code. Code of bank that operates this office. Name of bank automatically displayed.
     countryCode: String
+    #Alias Special processing account.
     accountNo: String
+}
+
+
+type SDFieldAlias {
+    # Data source table for field
+    tableName : String
+    #Field name in the data source table
+    fieldName : String
+    #The alias for the field?s label.
+    alias : String
+    #The alias for the column?s alias
+    columnAlias : String
+    #Field ID.
+    fieldId : Long
+    #The fields type, where type means NOT as it is defined in the database, but how it is defined in the backend layers, (e.g. varchar, bit, etc)
+    fieldtype : String
+    #The type of the control on the client side, where values are taken from INTERNAL_TYPE_DEF table
+    controlType : Long
+    #The format styling for this field.
+    formatStyle : Long
+    #if the field is a list - the source for the list of this field. Either an Id of a profile, a select statement, or a string value to find the select statement in the SQL_Resource.Oracle field (using the Like function).
+    contentSource : String
+    #The action the browser performs after a validation on a field has failed.
+    failureAction : Long
+    #The fields accelerator
+    accessKey: String
+    #Defines the allowed max length of the field in a single value, (e.g. 15), or in a decimal format, (e.g. 10.2).
+    maxLength : String
+    #The default values for the field.
+    defaultValue : String
+    #The default width for this field in a search list; if the value is 0, than the width will be figured by code algorithm.
+    columnWidth : Long
+    #Description.
+    description : String
+    #Default value type.
+    defaultValueType: Long
+
 }
 
 
 type Query {
   findAllBanks: [Bank]!
+  # Count of all the banks defined eg: {countBanks}
   countBanks: Long!
+  # Retrieve all the banks defined eg : {   showBanks(limit:5,offset:0) { officeName  } }
   showBanks(limit:Int,offset:Int) : [Bank]!
+  # Retrieve all the banks with filter and sort. Paging :  {banks(page:{page:1,size:5}) {content{office}}} Filter: {banks(filter:{office:"a"}) {content{office}}} Sort :  {banks(sort:"+officeName,-countryCode"){content{office}}}
   banks(page: InputPage,filter:BankExample={},sort: String) : BankPageableResponse
+  showMetaData(profileName:String) : [SDFieldAlias]!
 }
 
 type PageInfo {
